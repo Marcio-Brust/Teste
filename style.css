@@ -17,6 +17,7 @@ img {
   display: block;
   width: 100%;
 }
+
 body {
   background-image: radial-gradient(
     circle,
@@ -26,24 +27,98 @@ body {
     #4882a9,
     #55a8d4
   );
+  display: grid;
+  justify-content: center;
+}
+body.active {
+  background-image: linear-gradient(
+    to right top,
+    #f0f1f2,
+    #f2f3f4,
+    #f5f5f6,
+    #f7f7f7,
+    #f9f9f9
+  );
+}
+.header {
+  height: 300px;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 150px;
+}
+.btn {
+  padding: 20px 30px;
+  border-radius: 10px;
+  border: none;
+  background-image: linear-gradient(
+    to right top,
+    #f0f1f2,
+    #f2f3f4,
+    #f5f5f6,
+    #f7f7f7,
+    #f9f9f9
+  );
+  width: 100px;
+  cursor: pointer;
+}
+.btn:hover {
+  box-shadow: #f0f3f8 0px 0px 10px 2px;
+}
+
+body.active .btn {
+  background-image: radial-gradient(
+    circle,
+    #141f30,
+    #273d56,
+    #385e7f,
+    #4882a9,
+    #55a8d4
+  );
+  color: #fff;
+}
+body.active .btn:hover {
+  box-shadow: #131121 0px 0px 10px 2px;
+}
+body.active h1,
+body.active a,
+body.active p,
+body.active ul,
+body.active li {
+  color: #131626;
+}
+body.active .projeto {
+  background-image: linear-gradient(
+    to right top,
+    #e0e5ee,
+    #ced9ee,
+    #bbcdee,
+    #a9c2ee,
+    #96b6ee
+  );
+  border: solid 2px #3f3e49;
+}
+body.active .projeto:hover {
+  box-shadow: #131121 0px 0px 5px 2px;
 }
 
 h1 {
   text-align: center;
   font-weight: 800;
   font-size: 3rem;
-  margin-top: 100px;
-  margin-bottom: 50px;
   color: #fff;
 }
 
 .redes ul {
   display: flex;
-  justify-content: center;
-  gap: 160px;
+  justify-content: space-between;
+  align-items: center;
+
   margin-bottom: 50px;
 }
-.redes ul a img {
+.redes ul a {
   padding: 10px;
   background-image: radial-gradient(
     circle,
@@ -54,18 +129,26 @@ h1 {
     #120a1c
   );
   border-radius: 50%;
+  display: flex;
 }
-.redes ul a img:hover {
+body.active ul a {
+  background-image: linear-gradient(
+    to right top,
+    #e0e5ee,
+    #ced9ee,
+    #bbcdee,
+    #a9c2ee,
+    #96b6ee
+  );
+}
+
+.redes ul a:hover {
   border-radius: 50%;
   box-shadow: #fff 0px 0px 5px 2px;
 }
-@media (max-width: 700px) {
-  .redes ul {
-    width: 300px;
-    gap: 40px;
-    margin: 0 auto;
-    margin-bottom: 50px;
-  }
+body.active .redes ul a:hover {
+  border-radius: 50%;
+  box-shadow: #131121 0px 0px 5px 2px;
 }
 
 main {
@@ -97,4 +180,23 @@ main {
 }
 .projeto:hover {
   box-shadow: #fff 0px 0px 5px 2px;
+}
+
+@media (max-width: 800px) {
+  body {
+    box-sizing: border-box;
+    margin: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  .nav {
+    gap: 80px;
+  }
+  .redes {
+    gap: 0;
+  }
 }
