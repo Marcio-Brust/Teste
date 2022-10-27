@@ -1,25 +1,23 @@
 const body = document.querySelector("body");
 const btn = document.querySelector(".btn");
+const eventos = ["click", "touchstart"];
 
 const handleClick = (event) => {
   if (event.type === "touchstart") event.preventDefault();
   body.classList.toggle("active");
-  const active = body.classList.contains("active");
 
-  if (active) {
-    const redes = document.querySelectorAll("ul svg");
-    [...redes].forEach((img) => {
-      img.setAttribute("fill", "#222");
-    });
-    btn.innerText = "Dark";
-  } else {
-    const redes = document.querySelectorAll("ul svg");
-    [...redes].forEach((img) => {
-      img.setAttribute("fill", "#fff");
-    });
-    btn.innerText = "Light";
-  }
+  const active = body.classList.contains("active");
+  const redes = document.querySelectorAll("ul svg");
+
+  const cor = active
+    ? 222 && (btn.innerText = "Dark")
+    : (btn.innerText = "Light") && "fff";
+
+  [...redes].forEach((svg) => {
+    svg.setAttribute("fill", `#${cor}`);
+  });
 };
 
-btn.addEventListener("click", handleClick);
-btn.addEventListener("touchsatrt", handleClick);
+eventos.forEach((todosEventos) =>
+  btn.addEventListener(todosEventos, handleClick)
+);

@@ -115,7 +115,6 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   margin-bottom: 50px;
 }
 .redes ul a {
@@ -184,19 +183,11 @@ main {
 
 @media (max-width: 800px) {
   body {
-    box-sizing: border-box;
     margin: 5px;
   }
 }
-
 @media (max-width: 600px) {
   h1 {
-    font-size: 1.5rem;
-  }
-  .nav {
-    gap: 80px;
-  }
-  .redes {
-    gap: 0;
+    font-size: 2rem;
   }
 }
