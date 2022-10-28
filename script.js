@@ -2,8 +2,8 @@ const body = document.querySelector("body");
 const btn = document.querySelector(".btn");
 const eventos = ["click", "touchstart"];
 
-const handleClick = (event) => {
-  if (event.type === "touchstart") event.preventDefault();
+const handleClick = ({ type, preventDefault }) => {
+  if (type === "touchstart") preventDefault();
   body.classList.toggle("active");
 
   const active = body.classList.contains("active");
