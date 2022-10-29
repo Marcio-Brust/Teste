@@ -9,11 +9,7 @@ export default function shadowScoll() {
     addScrollEvent() {
       this.projetos.forEach((projeto) => {
         projeto =
-          window.innerWidth < 600
-            ? window.pageYOffset > projeto.offsetTop - window.innerHeight * 0.9
-              ? projeto.classList.add("active")
-              : projeto.classList.remove("active")
-            : window.pageYOffset > projeto.offsetTop - window.innerHeight * 0.8
+          window.pageYOffset > projeto.offsetTop - window.innerHeight * 0.9
             ? projeto.classList.add("active")
             : projeto.classList.remove("active");
       });
