@@ -1,23 +1,5 @@
-const body = document.querySelector("body");
-const btn = document.querySelector(".btn");
-const eventos = ["click", "touchstart"];
+import btnBackgorundBody from "./modules/btn-dark-light.js";
+import shadowScoll from "./modules/shadow-scroll.js";
 
-const handleClick = (event) => {
-  if (event.type === "touchstart") event.preventDefault();
-  body.classList.toggle("active");
-
-  const active = body.classList.contains("active");
-  const redes = document.querySelectorAll("ul svg");
-
-  const cor = active
-    ? 222 && (btn.innerText = "Dark")
-    : (btn.innerText = "Light") && "fff";
-
-  [...redes].forEach((svg) => {
-    svg.setAttribute("fill", `#${cor}`);
-  });
-};
-
-eventos.forEach((todosEventos) =>
-  btn.addEventListener(todosEventos, handleClick)
-);
+btnBackgorundBody();
+shadowScoll();
